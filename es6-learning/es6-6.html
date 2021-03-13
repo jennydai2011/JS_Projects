@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ad{
+            border: 1px solid black;
+            width: 100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad" id="ad"></div>
+    <script>
+        //ES6 允许函数参数赋初始值
+        //一般带默认值的参数放在最后
+        function add(a,b,c=10){
+            return a+b+c;
+        }
+        let result = add(2,3);
+        console.log(result);
+
+        //2.与解构赋值结合
+        function connect({host="127.0.0.1", username}){
+
+        }
+        connect({
+            host:'localhost',
+            username: 'test'});
+
+        
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ad{
+            border: 1px solid black;
+            width: 100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad" id="ad"></div>
+    <script>
+        //ES6 ... 扩展运算符, 能将数组转成逗号分隔的参数序列
+        const boys=['1' , '2', '3'];
+
+        function test(){
+            console.log(arguments);
+        }
+
+        test(...boys); //自动把数组元素，按顺序，当成实参，传递给函数
+
+        //扩展函数的用处
+        //1. 数组合并
+        const arr1 = ['a1' , 'a2'];
+        const arr2 = ['a3', 'a4'];
+         const arr3 = [...arr1, ...arr2];
+         console.log(arr3);
+
+         //2. 数组克隆
+         const kelong= [...arr3];
+         console.log(kelong);
+
+         //3. 将伪数组转换成真正的数组
+         const divs = document.querySelectorAll('div');
+         console.log(typeof divs);
+         const divArr = [...divs];
+         console.log(typeof divArr);
+    </script>
+</body>
+</html>

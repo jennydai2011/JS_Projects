@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ad{
+            border: 1px solid black;
+            width: 100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ad" id="ad"></div>
+    <script>
+        //ES6 引入rest参数，用于获取函数的实参，代替arguments
+        //ES5
+        function date(){
+            console.log(arguments);
+        }
+        date('a', 'b');
+
+        //ES6- rest
+        function date2(...args){
+            //与es5不同，返回不是Arguments对象，而是一个数组
+            //好处是，可以使用数组的方法， filter some every map来操作元素
+            console.log(args);
+        }
+        date2('a2', 'b2');
+        //rest 参数只能放在最后一个参数
+        function fn(a,b, ...args){
+        //function fn(a,b, ...args,c){//Uncaught SyntaxError: Rest parameter must be last formal parameter
+            console.log(args);
+        }
+        
+        fn(1,2,3,4,5);
+    </script>
+</body>
+</html>
